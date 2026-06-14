@@ -1,6 +1,6 @@
 # Scheduler MVP
 
-Appointment scheduling SaaS MVP built with Next.js, TypeScript, Prisma and PostgreSQL.
+Appointment scheduling SaaS MVP built with Next.js, TypeScript, Prisma and MySQL.
 
 ## Stack
 
@@ -8,7 +8,7 @@ Appointment scheduling SaaS MVP built with Next.js, TypeScript, Prisma and Postg
 - TypeScript
 - Tailwind CSS
 - Prisma ORM
-- PostgreSQL
+- MySQL
 - JWT cookie authentication
 - SMTP email scaffolding
 - Google Calendar OAuth scaffolding
@@ -72,7 +72,7 @@ Recommended settings:
 - Start command: `npm run start`
 - Node version: 20+
 
-If Hostinger does not provide PostgreSQL, use Neon or Supabase and place the connection string in `DATABASE_URL`.
+Use the MySQL database from Hostinger and place the connection string in `DATABASE_URL`.
 
 Before first production run:
 
