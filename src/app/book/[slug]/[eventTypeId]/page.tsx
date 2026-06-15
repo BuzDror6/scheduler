@@ -1,5 +1,6 @@
-import { Card, Field, PageShell } from "@/components/ui";
+import { Card, PageShell } from "@/components/ui";
 import { prisma } from "@/lib/prisma";
+import { BookingForm } from "./booking-form";
 
 export default async function EventBookingPage({ params }: { params: Promise<{ slug: string; eventTypeId: string }> }) {
   const resolvedParams = await params;
@@ -24,14 +25,7 @@ export default async function EventBookingPage({ params }: { params: Promise<{ s
           <h1 className="text-3xl font-bold">{eventType.title}</h1>
         </div>
         <Card>
-          <form className="grid gap-4" action={`/api/public/book/${resolvedParams.slug}/create-booking`} method="post">
-            <input type="hidden" name="eventTypeId" value={eventType.id} />
-            <Field label="תאריך ושעה ב־UTC" name="startTime" type="datetime-local" required />
-            <Field label="שם מלא" name="clientName" required />
-            <Field label="אימייל" name="clientEmail" type="email" required />
-            <Field label="טלפון" name="clientPhone" />
-            <button className="h-11 rounded-md bg-brand font-semibold text-white" type="submit">אישור פגישה</button>
-          </form>
+          <BookingForm eventTypeId={eventType.id} slug={resolvedParams.slug} />
         </Card>
       </div>
     </PageShell>
