@@ -1,13 +1,12 @@
-import { Card, PageShell } from "@/components/ui";
+import { PageShell } from "@/components/ui";
+import { SettingsManager } from "./settings-manager";
 
 export default function SettingsPage() {
   return (
     <PageShell>
       <div className="grid gap-5">
         <h1 className="text-3xl font-bold">הגדרות</h1>
-        <Card>
-          <p className="text-slate-600">פרופיל, אזור זמן, קישור הזמנות וחיבור Google Calendar.</p>
-        </Card>
+        <SettingsManager />
       </div>
     </PageShell>
   );
